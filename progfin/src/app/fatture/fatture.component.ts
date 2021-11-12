@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContentFatture } from '../interfaces/content-fatture';
 import { Fatture } from '../interfaces/fatture';
+import { New } from '../interfaces/new';
 import { FattureService } from '../service/fatture.service';
 
 @Component({
@@ -40,7 +41,7 @@ export class FattureComponent implements OnInit {
    }
 
    selectFatture(item: Fatture) {
-    this.router.navigate(['fatture', item.id, 'new'])
+    this.router.navigate(['fatture', item.id, 'edit'])
    }
 
   }

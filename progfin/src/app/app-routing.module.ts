@@ -48,6 +48,10 @@ const routes: Routes = [
   {
     path: 'fatture/new',
     component: EditfatturaComponent
+  },
+  {
+    path: 'fatture/:id/edit',
+    component: EditfatturaComponent
   }
 ];
 

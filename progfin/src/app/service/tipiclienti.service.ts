@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class TipiClientiService {
 
   // urlAPI = environment.urlAPI + 'api/province?page=0&size=20&sort=id,ASC';
-  urlAPI2 = environment.urlAPI + 'api/clienti/tipicliente/';
+  urlAPI2 = environment.urlAPI + '/api/statifattura/';
 
   constructor(private http: HttpClient) { }
 

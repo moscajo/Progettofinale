@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ClientiService } from '../clienti.service';
+import { Content } from '../interfaces/content';
+import { ContentFatture } from '../interfaces/content-fatture';
 
 import { Fatture } from '../interfaces/fatture';
 import { New } from '../interfaces/new';
+import { StatoFattura } from '../interfaces/stato-fattura';
 import { FattureService } from '../service/fatture.service';
 import { NewfatturaService } from '../service/newfattura.service';
 
@@ -27,13 +31,15 @@ export class EditfatturaComponent implements OnInit {
     id:1
   }
   }
-
-  tipiFatture = [];
+  clienti!: Content  ;
+  tipiFatture: StatoFattura[] = [] ;
+  
 
   constructor(private newfatturaService:  NewfatturaService,
     private fattureService: FattureService,
     private router: Router,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,
+    private clientiService: ClientiService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(element => {
@@ -49,25 +55,29 @@ export class EditfatturaComponent implements OnInit {
     })
    
     this.getAllStato();
+
+    this.clientiService.getAllClienti().subscribe(response => this.clienti = response)
   }
   getAllStato(){
-    this.newfatturaService.getAllStato().subscribe(response => this.tipiFatture = response);
+    this.newfatturaService.getAllStato().subscribe(response => this.tipiFatture = response.content);
   }
+  
   saveFattura(){
-   
+      console.log(this.newFattura) 
     this.route.params.subscribe(element => {
       if(!element.id){ 
         
         this.fattureService.createFattura(this.newFattura).subscribe(response => {
           console.log(response);
-          this.router.navigate(['clienti/:id/fatture'])
+          this.router.navigate(['clienti/list'])
         })
       } else {
         this.fattureService.updateFattura(this.newFattura).subscribe(response => {
           console.log(response);
-          this.router.navigate(['clienti/:id/fatture'])
+          this.router.navigate(['clienti/list'])
         })
       }
     })
   }
 }
+

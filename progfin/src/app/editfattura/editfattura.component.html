@@ -3,24 +3,36 @@
     <div class="card text-center">
         <form class="m-3">
             <div class="form-group">
-              <input type="text" [(ngModel)]="newFattura.data" class="form-control" name="ragioneSociale" placeholder="ragioneSociale...">
+                <input type="text" [(ngModel)]="newFattura.data" class="form-control" name="ragioneSociale"
+                    placeholder="ragioneSociale...">
             </div>
             <div class="form-group">
-                <input type="text" [(ngModel)]="newFattura.numero" class="form-control" name="partitaIva" placeholder="partitaIva...">
+                <input type="number" [(ngModel)]="newFattura.numero" class="form-control" name="partitaIva"
+                    placeholder="partitaIva...">
             </div>
             <div class="form-group">
-                <input type="text" [(ngModel)]="newFattura.anno" class="form-control" name="partitaIva" placeholder="partitaIva...">
+                <input type="number" [(ngModel)]="newFattura.anno" class="form-control" name="partitaIva"
+                    placeholder="partitaIva...">
             </div>
             <div class="form-group">
-                <input type="text" [(ngModel)]="newFattura.importo" class="form-control" name="partitaIva" placeholder="partitaIva...">
+                <input type="number" [(ngModel)]="newFattura.importo" class="form-control" name="partitaIva"
+                    placeholder="partitaIva...">
             </div>
             <div class="form-group">
-                
-                <select [(ngModel)]="newFattura.stato" name="tipoCliente" class="form-select">
+
+                <select [(ngModel)]="newFattura.stato" name="tipoFattura" class="form-select">
                     <option selected>Seleziona Tipo Cliente</option>
-                    <option *ngFor="let item of tipiFatture">{{item}}</option>
+                    <option [ngValue]="item" *ngFor="let item of tipiFatture">{{item.nome}}</option>
                 </select>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary form-control" (click)="saveFattura()">Salva Fattura</button>
-        </div>
+            </div>
+            <div class="form-group">
+
+                <select [(ngModel)]="newFattura.cliente.id" name="tipoCliente" class="form-select">
+                    <option selected>Seleziona  Cliente</option>
+                    <option [ngValue]="item.id" *ngFor="let item of clienti.content">{{item.ragioneSociale}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary form-control" (click)="saveFattura()">Salva
+                    Fattura</button>
+            </div>
