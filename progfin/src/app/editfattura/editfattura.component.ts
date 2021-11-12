@@ -50,7 +50,9 @@ export class EditfatturaComponent implements OnInit {
         
       }else {
         this.title = "Edit";
-        this.fattureService.getFattureId(element.id).subscribe(response  =>  {this.newFattura = response; console.log(response); this.userEdit = false} )          
+        this.fattureService.getFattureId(element.id).subscribe(response  =>  {
+          this.newFattura = response;
+            this.userEdit = false} )          
         
       }
     })
