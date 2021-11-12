@@ -7,6 +7,8 @@
       <th scope="col">Nome</th>
       <th scope="col">Cognome</th>
       <th scope="col">Email</th>
+      <th scope="col">Ragione Sociale</th>
+      <th scope="col">Iva</th>
     </tr>
     </thead>
     <tbody>
@@ -15,6 +17,8 @@
       <td>{{ item.nomeContatto}}</td>
       <td>{{item.cognomeContatto}}</td>
       <td>{{item.emailContatto}}</td>
+      <td>{{item.ragioneSociale}}</td>
+      <td>{{item.partitaIva}}</td>
       <td>
         <button type="button" class="btn btn-outline-dark btn-sm mx-1" (click)="detailClienti(item)"><i class="bi bi-eyeglasses"></i></button>
         <button type="button" class="btn btn-outline-warning btn-sm mx-1" (click)="selectClienti(item)"><i class="bi bi-brush-fill"></i></button>
