@@ -31,8 +31,9 @@ export class EditfatturaComponent implements OnInit {
     id:1
   }
   }
-  clienti!: Content  ;
+  clienti!: ContentFatture  ;
   tipiFatture: StatoFattura[] = [] ;
+  userEdit: boolean = true ;
   
 
   constructor(private newfatturaService:  NewfatturaService,
@@ -49,7 +50,7 @@ export class EditfatturaComponent implements OnInit {
         
       }else {
         this.title = "Edit";
-        this.fattureService.getFatture(element.id).subscribe(response  => this.newFattura = response.content)          
+        this.fattureService.getFattureId(element.id).subscribe(response  =>  {this.newFattura = response; console.log(response); this.userEdit = false} )          
         
       }
     })

@@ -7,16 +7,16 @@
                     placeholder="ragioneSociale...">
             </div>
             <div class="form-group">
-                <input type="number" [(ngModel)]="newFattura.numero" class="form-control" name="partitaIva"
-                    placeholder="partitaIva...">
+                <input type="number" [(ngModel)]="newFattura.numero" class="form-control" name="numero"
+                    placeholder="numero...">
             </div>
             <div class="form-group">
-                <input type="number" [(ngModel)]="newFattura.anno" class="form-control" name="partitaIva"
-                    placeholder="partitaIva...">
+                <input type="number" [(ngModel)]="newFattura.anno" class="form-control" name="anno"
+                    placeholder="anno...">
             </div>
             <div class="form-group">
-                <input type="number" [(ngModel)]="newFattura.importo" class="form-control" name="partitaIva"
-                    placeholder="partitaIva...">
+                <input type="number" [(ngModel)]="newFattura.importo" class="form-control" name="importo"
+                    placeholder="Importo...">
             </div>
             <div class="form-group">
 
@@ -25,7 +25,7 @@
                     <option [ngValue]="item" *ngFor="let item of tipiFatture">{{item.nome}}</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div *ngIf="userEdit" class="form-group">
 
                 <select [(ngModel)]="newFattura.cliente.id" name="tipoCliente" class="form-select">
                     <option selected>Seleziona  Cliente</option>
