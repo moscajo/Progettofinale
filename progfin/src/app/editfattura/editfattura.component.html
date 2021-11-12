@@ -1,0 +1,26 @@
+<div class="container my-3">
+    <h1>{{title}} </h1>
+    <div class="card text-center">
+        <form class="m-3">
+            <div class="form-group">
+              <input type="text" [(ngModel)]="newFattura.data" class="form-control" name="ragioneSociale" placeholder="ragioneSociale...">
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="newFattura.numero" class="form-control" name="partitaIva" placeholder="partitaIva...">
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="newFattura.anno" class="form-control" name="partitaIva" placeholder="partitaIva...">
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="newFattura.importo" class="form-control" name="partitaIva" placeholder="partitaIva...">
+            </div>
+            <div class="form-group">
+                
+                <select [(ngModel)]="newFattura.stato" name="tipoCliente" class="form-select">
+                    <option selected>Seleziona Tipo Cliente</option>
+                    <option *ngFor="let item of tipiFatture">{{item}}</option>
+                </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control" (click)="saveFattura()">Salva Fattura</button>
+        </div>

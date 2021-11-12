@@ -1,0 +1,20 @@
+<div class="container my-3">
+    <h1>Dettagli:  {{detailClient.nomeContatto}} {{detailClient.cognomeContatto}}</h1>
+    <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Nome:</h5> <p>{{detailClient.nomeContatto}}</p><hr>
+          <h5 class="card-title">Cognome:</h5> <p>{{detailClient.cognomeContatto}}</p><hr>
+          <h5 class="card-text">Email:</h5> <p>{{detailClient.emailContatto}}</p><hr>
+          <h5 class="card-text">Ragione Sociale:</h5> <p>{{detailClient.ragioneSociale}}</p><hr>
+          <h5 class="card-text">Partita IVA:</h5> <p>{{detailClient.partitaIva}}</p><hr>
+          <h5 class="card-text">Tipo Cliente:</h5> <p>{{detailClient.tipoCliente}}</p><hr>
+          <h5 class="card-text">P.E.C.:</h5> <p>{{detailClient.pec}}</p><hr>
+          <h5 class="card-text">Tel.:</h5> <p>{{detailClient.telefono}}</p><hr>
+          <h5 class="card-text">Indirizzo sede operativa:</h5><p> {{detailClient.indirizzoSedeOperativa.via}},{{detailClient.indirizzoSedeOperativa.civico}},{{detailClient.indirizzoSedeOperativa.localita}},{{detailClient.indirizzoSedeOperativa.comune.provincia.nome}}</p><hr>
+          <h5 class="card-text">Indirizzo Sede Legale:</h5><p> {{detailClient.indirizzoSedeLegale.via}}, {{detailClient.indirizzoSedeLegale.localita}}</p>
+          
+        </div>
+        <div class="card-footer text-muted"></div>
+      </div>
+</div>
+

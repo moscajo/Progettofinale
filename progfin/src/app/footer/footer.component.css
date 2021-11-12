@@ -1,0 +1,9 @@
+p {
+    color: white;
+}
+#logo {
+    width: 50px;
+}
+footer {
+    position: static;
+}
